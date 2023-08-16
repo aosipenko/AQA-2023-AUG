@@ -34,7 +34,11 @@ public class Main {
         System.out.println(redCar == bobsCar);
         redCar.hashCode();
 
-//
+        // HOMEWORK No. 1 | SOKOLOV
+        colorChange(redCar, "black");
+
+        System.out.println(redCar.color);
+
 //        makeCarGoSomewhere(greenCar);
 //
 //        redCar.licensePlate = "test";
@@ -69,14 +73,22 @@ public class Main {
 //        System.out.println(o1.equals(o2));
     }
 
+    public static void changeColor(Car car, String newColor) {
+        car.color = newColor;
+    }
+
     public static void makeCarGoSomewhere(Car car) {
         car.licensePlate = null;
         car.accelerate();
         car.slowDown();
     }
 
-    public static void smth(int i){
+    public static void smth(int i) {
         i += 10;
     }
 
+    // HOMEWORK No. 1 | SOKOLOV
+    public static void colorChange(Car car, String newColor) {
+        car.color = newColor;
+    }
 }
