@@ -13,4 +13,7 @@ public interface ICar {
     void stop();
 
     void reverseMovement();
+
+    void opendoor();
+
 }
