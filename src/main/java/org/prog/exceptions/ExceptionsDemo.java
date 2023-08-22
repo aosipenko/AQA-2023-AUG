@@ -6,13 +6,32 @@ import java.io.FileReader;
 
 public class ExceptionsDemo {
 
+    private static String localString;
+
     public static void main(String[] args) throws FileNotFoundException {
-        brokenMethod();
+        Object o = null;
+
     }
 
-    private static void brokenMethod() throws FileNotFoundException {
+    public static void printStringLength(){
+        if (localString == null){
+            localString = "asd";
+        }
+        printLocalStringLength();
+    }
+
+    private static void printLocalStringLength() {
+//        if (localString == null) {
+//            throw new RuntimeException("empty string!");
+//        }
+        System.out.println(localString.length());
+    }
+
+    private static void brokenMethod(boolean flag) throws FileNotFoundException {
         try {
-            FileReader fileReader = new FileReader(new File("abc.txt"));
+            if (flag) {
+                FileReader fileReader = new FileReader(new File("abc.txt"));
+            }
         } finally {
             System.out.println("this is executed");
         }
@@ -24,6 +43,8 @@ public class ExceptionsDemo {
             FileReader fileReader = new FileReader(new File("abc.txt"));
         } catch (FileNotFoundException e) {
             System.err.println("OOOPS!");
+        } catch (Throwable th) {
+            System.out.println("this is another exception");
         } finally {
             System.out.println("This is executed always");
         }
