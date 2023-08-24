@@ -35,15 +35,6 @@ public class Main {
         System.out.println(Example.staticValue);
     }
 
-    public static void makeCarGoSomewhere(ICar car, String distanceOne, String distanceTwo) {
-        car.moveForward(distanceOne);
-        car.turnLeft();
-        car.moveForward(distanceTwo);
-        car.stop();
-    }
 
-    public static void smth(IFuleable fuleable) {
-        fuleable.fuelVehicle();
-    }
 
 }

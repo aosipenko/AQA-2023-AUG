@@ -1,41 +1,43 @@
 package org.prog.collections;
 
-import org.prog.cars.Car;
-
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListsDemo {
 
+
     public static void main(String[] args) {
-        List<Car> ownedCars = new ArrayList<>();
-        List<Car> unsoldCars = new ArrayList<>();
-        List<Car> allCars = new ArrayList<>();
-        Car myCar = new Car();
-        Car bobsCar = new Car();
-        Car joesCar = new Car();
-        Car unsoldCarRed = new Car();
-        Car unsoldCarBlue = new Car();
-        ownedCars.add(myCar);
-        ownedCars.add(bobsCar);
-        ownedCars.add(joesCar);
-        unsoldCars.add(unsoldCarBlue);
-        unsoldCars.add(unsoldCarRed);
+        List<String> arrayList = new ArrayList<>();
+        arrayList.add("kooojkf");
+        arrayList.add("kosdjfiouh123");
+        arrayList.add(null);
+        arrayList.add("asdknol");
+        arrayList.add("oiyhaiusdh");
 
-        System.out.println(ownedCars.size());
-        System.out.println(unsoldCars.size());
+//        for (int i = 0; i < arrayList.size(); i++) {
+//            if (arrayList.get(i) != null && arrayList.get(i).contains("a")) {
+//                results.add(arrayList.get(i).length());
+//            }
+//        }
+//
+//        for (String s : arrayList) {
+//            if (s != null && s.contains("a")) {
+//                results.add(s.length());
+//            }
+//        }
 
-        allCars.addAll(ownedCars);
-        allCars.addAll(unsoldCars);
 
-        System.out.println(allCars.size());
-
-        allCars.removeAll(ownedCars);
-
-        System.out.println(allCars.size());
+        List<Integer> integers = getStringsLength(arrayList, "a");
+        System.out.println(integers.size());
     }
 
-    private static void demoStream() {
-
+    public static List<Integer> getStringsLength(List<String> strings, String letter){
+        return strings.stream()
+                .filter(s -> s != null)
+                .filter(s -> s.contains(letter))
+                .map(s -> s.length())
+                .toList();
     }
+
 }
