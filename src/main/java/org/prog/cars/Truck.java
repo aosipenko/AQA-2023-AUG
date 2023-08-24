@@ -6,8 +6,4 @@ public class Truck extends Car {
         smth();
     }
 
-    protected void smth(){
-
-    }
-
 }

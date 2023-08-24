@@ -2,12 +2,12 @@ package org.prog.cars;
 
 import org.prog.Journey;
 
-public class Car implements ICar, IFuleable {
+public class Car extends Vehicle implements ICar, IFuleable {
 
     public String color;
-    public String fuelType;
+    public String carBrand;
 
-    public void goTo(Journey parameters){
+    public void goTo(Journey parameters) {
         goTo(parameters.from, parameters.passingThrough, parameters.destination);
     }
 
@@ -56,5 +56,14 @@ public class Car implements ICar, IFuleable {
     @Override
     public void fuelVehicle() {
         fuelCar();
+    }
+
+    @Override
+    public void setWheelSize() {
+        changeOil();
+    }
+
+    private void changeOil() {
+
     }
 }
