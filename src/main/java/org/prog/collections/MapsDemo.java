@@ -112,7 +112,7 @@ public class MapsDemo {
     private static boolean checkSpecificOwnerHasCarWithColor(
             String carColor, int ownerIndex){
 
-        
+
 
         return false;
     }
