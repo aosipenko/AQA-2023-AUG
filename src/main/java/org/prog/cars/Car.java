@@ -4,7 +4,7 @@ import org.prog.Journey;
 
 public class Car implements ICar, IFuleable {
 
-    public String color;
+    public static String color;
     public String fuelType;
 
     public void goTo(Journey parameters){
