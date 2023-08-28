@@ -4,7 +4,11 @@ import org.prog.cars.*;
 import org.prog.exceptions.ExceptionsDemo;
 import org.prog.staticdemo.Example;
 
+import java.awt.*;
+
 public class Main {
+
+    private Color color;
 
     /**
      * 000000000010000000000000009000
@@ -32,9 +36,30 @@ public class Main {
         System.out.println(exampleTwo.regularValue);
         System.out.println(exampleThree.regularValue);
 
-        System.out.println(Example.staticValue);
+            }
+
+
+
+    public static class Car {
+        public String fuelType;
+        private String model;
+        private String color;
+//Homework
+        Car() {
+            this("Audi");
+        }
+        Car(String model) {
+            this("Red", model);
+        }
+
+        Car(String color, String model) {
+            this.color = color;
+            this.model = model;
+            this.info();
+        }
+
+        public void info() {
+            System.out.println("Car Model: " + model + ", Car Color: " + color);
+        }
     }
-
-
-
 }
