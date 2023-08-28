@@ -32,8 +32,7 @@ public class Main {
         System.out.println(exampleTwo.regularValue);
         System.out.println(exampleThree.regularValue);
 
-        System.out.println(Example.staticValue);
-    }
+            }
 
 
 
