@@ -1,6 +1,8 @@
 package org.prog;
 
 import org.prog.cars.*;
+import org.prog.exceptions.ExceptionsDemo;
+import org.prog.staticdemo.Example;
 
 public class Main {
 
@@ -18,53 +20,21 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        //test
-        Car gasCar = new Car();
-        HeavyTruck dieselCar = new HeavyTruck();
+        Example exampleOne = new Example();
+        Example exampleTwo = new Example();
+        Example exampleThree = new Example();
 
-        gasCar.fuelType = "gas";
-        dieselCar.htFuelType = "diesel";
+        exampleOne.regularValue = "A";
+        exampleTwo.regularValue = "B";
+        exampleThree.regularValue = "C";
 
-        gasCar.fuelType.equals(dieselCar.htFuelType);
-//        Truck truck = new Truck();
-//        HeavyTruck heavyTruck = new HeavyTruck();
-//        GiantTruck giantTruck = new GiantTruck();
-//        ElectricCar tesla = new ElectricCar();
+        System.out.println(exampleOne.regularValue);
+        System.out.println(exampleTwo.regularValue);
+        System.out.println(exampleThree.regularValue);
 
-//        makeCarGoSomewhere(truck, "300 m", "200 m");
-//        makeCarGoSomewhere(heavyTruck, "300 m", "200 m");
-//        makeCarGoSomewhere(giantTruck, "300 m", "200 m");
-//        makeCarGoSomewhere(tesla, "5 m", "0 m");
-
-        Journey journeyA = new Journey();
-        journeyA.from = "Kharkiv";
-        journeyA.passingThrough = "Dnipro";
-        journeyA.destination = "Kherson";
-
-        Journey journeyB = new Journey();
-        journeyB.from = "Kharkiv";
-        journeyB.passingThrough = "Dnipro";
-        journeyB.destination = "Kherson";
-
-        System.out.println(journeyA);
-        System.out.println(journeyA.equals(journeyB));
-
-//        redCar.goTo("Odessa");
-//        redCar.goTo("Odessa", "Lviv");
-//        redCar.goTo("Odessa", "Kyiv", "Dnipro");
-//        redCar.goTo(journeyA);
-//        redCar.goTo(journeyB);
+        System.out.println(Example.staticValue);
     }
 
-    public static void makeCarGoSomewhere(ICar car, String distanceOne, String distanceTwo) {
-        car.moveForward(distanceOne);
-        car.turnLeft();
-        car.moveForward(distanceTwo);
-        car.stop();
-    }
 
-    public static void smth(IFuleable fuleable) {
-        fuleable.fuelVehicle();
-    }
 
 }
