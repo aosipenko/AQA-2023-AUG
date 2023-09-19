@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -15,7 +16,7 @@ public class WebDriverFactory {
 
     @SneakyThrows
     public static WebDriver getDriver() {
-        String type = System.getProperty("driver.type", "DOCKER");
+        String type = System.getProperty("driver.type", "CHROME");
         BrowserType browserType = BrowserType.valueOf(type);
         switch (browserType) {
             case CHROME:
@@ -49,5 +50,15 @@ public class WebDriverFactory {
             put("enableVNC", true);
         }});
         return chromeOptions;
+    }
+
+    private static FirefoxOptions ffOptions() {
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.addArguments("--remote-allow-origins=*");
+        firefoxOptions.setCapability("selenoid:options", new HashMap<String, Object>() {{
+            put("enableVideo", true);
+            put("enableVNC", true);
+        }});
+        return firefoxOptions;
     }
 }
